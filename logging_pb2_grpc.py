@@ -35,14 +35,14 @@ class LoggingServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Log = channel.unary_unary(
-                '/logging.LoggingService/Log',
+                '/LoggingService/Log',
                 request_serializer=logging__pb2.LogRequest.SerializeToString,
                 response_deserializer=logging__pb2.LogResponse.FromString,
                 _registered_method=True)
         self.GetLogs = channel.unary_unary(
-                '/logging.LoggingService/GetLogs',
+                '/LoggingService/GetLogs',
                 request_serializer=logging__pb2.Empty.SerializeToString,
-                response_deserializer=logging__pb2.LogResponseList.FromString,
+                response_deserializer=logging__pb2.GetLogsResponse.FromString,
                 _registered_method=True)
 
 
@@ -72,13 +72,13 @@ def add_LoggingServiceServicer_to_server(servicer, server):
             'GetLogs': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLogs,
                     request_deserializer=logging__pb2.Empty.FromString,
-                    response_serializer=logging__pb2.LogResponseList.SerializeToString,
+                    response_serializer=logging__pb2.GetLogsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'logging.LoggingService', rpc_method_handlers)
+            'LoggingService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('logging.LoggingService', rpc_method_handlers)
+    server.add_registered_method_handlers('LoggingService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -99,7 +99,7 @@ class LoggingService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/logging.LoggingService/Log',
+            '/LoggingService/Log',
             logging__pb2.LogRequest.SerializeToString,
             logging__pb2.LogResponse.FromString,
             options,
@@ -126,9 +126,9 @@ class LoggingService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/logging.LoggingService/GetLogs',
+            '/LoggingService/GetLogs',
             logging__pb2.Empty.SerializeToString,
-            logging__pb2.LogResponseList.FromString,
+            logging__pb2.GetLogsResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -24,21 +24,21 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rlogging.proto\x12\x07logging\"%\n\nLogRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03msg\x18\x02 \x01(\t\"\x1d\n\x0bLogResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\"\x07\n\x05\x45mpty\"\x1f\n\x0fLogResponseList\x12\x0c\n\x04logs\x18\x01 \x03(\t2w\n\x0eLoggingService\x12\x30\n\x03Log\x12\x13.logging.LogRequest\x1a\x14.logging.LogResponse\x12\x33\n\x07GetLogs\x12\x0e.logging.Empty\x1a\x18.logging.LogResponseListb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\rlogging.proto\"%\n\nLogRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03msg\x18\x02 \x01(\t\"\x1d\n\x0bLogResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\"\x1f\n\x0fGetLogsResponse\x12\x0c\n\x04logs\x18\x01 \x01(\t\"\x07\n\x05\x45mpty2W\n\x0eLoggingService\x12 \n\x03Log\x12\x0b.LogRequest\x1a\x0c.LogResponse\x12#\n\x07GetLogs\x12\x06.Empty\x1a\x10.GetLogsResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'logging_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_LOGREQUEST']._serialized_start=26
-  _globals['_LOGREQUEST']._serialized_end=63
-  _globals['_LOGRESPONSE']._serialized_start=65
-  _globals['_LOGRESPONSE']._serialized_end=94
-  _globals['_EMPTY']._serialized_start=96
-  _globals['_EMPTY']._serialized_end=103
-  _globals['_LOGRESPONSELIST']._serialized_start=105
-  _globals['_LOGRESPONSELIST']._serialized_end=136
-  _globals['_LOGGINGSERVICE']._serialized_start=138
-  _globals['_LOGGINGSERVICE']._serialized_end=257
+  _globals['_LOGREQUEST']._serialized_start=17
+  _globals['_LOGREQUEST']._serialized_end=54
+  _globals['_LOGRESPONSE']._serialized_start=56
+  _globals['_LOGRESPONSE']._serialized_end=85
+  _globals['_GETLOGSRESPONSE']._serialized_start=87
+  _globals['_GETLOGSRESPONSE']._serialized_end=118
+  _globals['_EMPTY']._serialized_start=120
+  _globals['_EMPTY']._serialized_end=127
+  _globals['_LOGGINGSERVICE']._serialized_start=129
+  _globals['_LOGGINGSERVICE']._serialized_end=216
 # @@protoc_insertion_point(module_scope)
