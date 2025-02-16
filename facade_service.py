@@ -54,6 +54,6 @@ def get_data():
         return {"error": "Error retrieving data"}, 500
     
     # Convert log_response.logs to a serializable format
-    logs = log_response.messages
+    logs = log_response.logs
     
     return {"logs": logs, "messages": messages_response.text}
