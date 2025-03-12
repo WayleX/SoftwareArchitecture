@@ -1,0 +1,6 @@
+{
+    "logging-service": ["localhost:8001",
+    "localhost:8003",
+    "localhost:8004"],
+    "messages-service": ["http://localhost:8002"]
+}
