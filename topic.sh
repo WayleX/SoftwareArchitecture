@@ -1,0 +1,2 @@
+sudo docker exec -it broker-1 /opt/kafka/bin/./kafka-topics.sh --bootstrap-server broker-1:19092,broker-2:19092,broker-3:19092 --create --topic messages --replication-factor=3
+sudo docker exec -it broker-1 /opt/kafka/bin/kafka-topics.sh --alter --topic messages --partitions 2 --bootstrap-server broker-1:19092
